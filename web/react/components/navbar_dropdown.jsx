@@ -256,7 +256,7 @@ export default class NavbarDropdown extends React.Component {
                                 href='#'
                                 onClick={this.handleAboutModal}
                             >
-                                {'About Mattermost'}
+                                {'About'}
                             </a>
                         </li>
                         <UserSettingsModal

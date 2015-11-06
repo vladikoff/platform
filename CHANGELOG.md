@@ -384,7 +384,7 @@ Prior to upgrading the Mattermost binaries from the previous versions, the below
   - Removed: `"HelpLink": "/static/help/configure_links.html"` removed since option didn't need configuration
   - Removed: `"ReportProblemLink": "/static/help/configure_links.html"` removed since option didn't need configuration
   - Removed: `"TourLink": "/static/help/configure_links.html"` removed since option didn't need configuration
-  - Removed: `"DefaultThemeColor": "#2389D7"` removed since theme colors changed from 1 to 18, default theme color option may be added back later after theme color design stablizes 
+  - Removed: `"DefaultThemeColor": "#E66000"` removed since theme colors changed from 1 to 18, default theme color option may be added back later after theme color design stablizes
   - Renamed: `"DisableTeamCreation": false` to `"EnableUserCreation": true` and reversed
   - Added: ` "EnableUserCreation": true` added to disable ability to create new user accounts in the system
 

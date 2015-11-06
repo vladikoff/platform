@@ -43,6 +43,8 @@ func InitUser(r *mux.Router) {
 	sr.Handle("/send_password_reset", ApiAppHandler(sendPasswordReset)).Methods("POST")
 	sr.Handle("/reset_password", ApiAppHandler(resetPassword)).Methods("POST")
 	sr.Handle("/login", ApiAppHandler(login)).Methods("POST")
+	sr.Handle("/fxa-login", ApiAppHandler(fxaLogin)).Methods("GET")
+	sr.Handle("/fxa-redirect", ApiAppHandler(fxaRedirect)).Methods("GET")
 	sr.Handle("/logout", ApiUserRequired(logout)).Methods("POST")
 	sr.Handle("/revoke_session", ApiUserRequired(revokeSession)).Methods("POST")
 
@@ -583,6 +585,38 @@ func Logout(c *Context, w http.ResponseWriter, r *http.Request) {
 		c.Err = result.Err
 		return
 	}
+}
+
+func fxaRedirect(c *Context, w http.ResponseWriter, r *http.Request) {
+	params := mux.Vars(r)
+	code := params["code"]
+
+	url := "https://oauth-stable.dev.lcip.org/v1/token"
+	fmt.Println("URL:>", url)
+
+	var jsonStr = []byte(`{"code":` + code + `, "client_id": "be4581e4fc552c12", "client_secret": "d4c53ef1226299a9a062c24f980860803242a182f49535dee55ae285dc3cb24d"}`)
+	fmt.Println("sending:", jsonStr)
+	req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonStr))
+	req.Header.Set("Content-Type", "application/json")
+
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	fmt.Println("response Status:", resp.Status)
+	fmt.Println("response Headers:", resp.Header)
+	body, _ := ioutil.ReadAll(resp.Body)
+	fmt.Println("response Body:", string(body))
+	return
+}
+
+
+func fxaLogin(c *Context, w http.ResponseWriter, r *http.Request) {
+	http.Redirect(w, r, "https://oauth-stable.dev.lcip.org/v1/authorization?client_id=be4581e4fc552c12&redirect_uri=http://localhost:8065/fxa-redirect&state=1&scope=profile", 301)
+	return
 }
 
 func getMe(c *Context, w http.ResponseWriter, r *http.Request) {

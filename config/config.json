@@ -13,7 +13,7 @@
         "EnableSecurityFixAlert": true
     },
     "TeamSettings": {
-        "SiteName": "Mattermost",
+        "SiteName": "Firefox Cloud Spaces",
         "MaxUsersPerTeam": 50,
         "EnableTeamCreation": true,
         "EnableUserCreation": true,

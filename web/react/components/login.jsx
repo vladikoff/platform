@@ -218,6 +218,10 @@ export default class Login extends React.Component {
                 <h5 className='margin--less'>{'Sign in to:'}</h5>
                 <h2 className='signup-team__name'>{teamDisplayName}</h2>
                 <h2 className='signup-team__subdomain'>{'on '}{global.window.mm_config.SiteName}</h2>
+                <div className='form-group'>
+                  <a href='/api/v1/users/fxa-login' style={{fontSize: '22px'}} className='btn btn-primary'>{'Sign in with Firefox Accounts'}</a>
+                </div>
+
                 <form onSubmit={this.handleSubmit}>
                     {verifiedBox}
                     <div className={'form-group' + errorClass}>
