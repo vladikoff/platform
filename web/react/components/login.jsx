@@ -100,8 +100,7 @@ export default class Login extends React.Component {
                         className='btn btn-custom-login gitlab'
                         href={'/' + teamName + '/login/gitlab'}
                     >
-                        <span className='icon' />
-                        <span>{'with GitLab'}</span>
+                        <span>{'Sign in with Firefox Accounts'}</span>
                     </a>
            );
         }

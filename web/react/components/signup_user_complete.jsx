@@ -182,8 +182,7 @@ export default class SignupUserComplete extends React.Component {
                         className='btn btn-custom-login gitlab'
                         href={'/' + this.props.teamName + '/signup/gitlab' + window.location.search}
                     >
-                        <span className='icon' />
-                        <span>with GitLab</span>
+                        <span>{'Sign in with Firefox Accounts'}</span>
                     </a>
            );
         }

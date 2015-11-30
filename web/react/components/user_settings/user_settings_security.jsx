@@ -173,7 +173,7 @@ export default class SecurityTab extends React.Component {
                         key='oauthPasswordInfo'
                         className='form-group'
                     >
-                        <label className='col-sm-12'>Log in occurs through GitLab. Please see your GitLab account settings page to update your password.</label>
+                        <label className='col-sm-12'>Log in occurs through Firefox Accounts. Please see your GitLab account settings page to update your password.</label>
                     </div>
                 );
             }

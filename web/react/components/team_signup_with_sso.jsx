@@ -84,8 +84,7 @@ export default class SSOSignUpPage extends React.Component {
                     onClick={this.handleSubmit}
                     disabled={disabled}
                 >
-                    <span className='icon'/>
-                    <span>{'Create team with GitLab Account'}</span>
+                    <span>{'Create team with Firefox Accounts'}</span>
                 </a>
             );
         }

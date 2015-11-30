@@ -56,7 +56,7 @@
         "AmazonS3Region": ""
     },
     "EmailSettings": {
-        "EnableSignUpWithEmail": true,
+        "EnableSignUpWithEmail": false,
         "SendEmailNotifications": false,
         "RequireEmailVerification": false,
         "FeedbackName": "",
@@ -84,12 +84,12 @@
         "ShowFullName": true
     },
     "GitLabSettings": {
-        "Enable": false,
-        "Secret": "",
-        "Id": "",
-        "Scope": "",
-        "AuthEndpoint": "",
-        "TokenEndpoint": "",
-        "UserApiEndpoint": ""
+        "Enable": true,
+        "Secret": "d4c53ef1226299a9a062c24f980860803242a182f49535dee55ae285dc3cb24d",
+        "Id": "be4581e4fc552c12",
+        "Scope": "profile",
+        "AuthEndpoint": "https://oauth-stable.dev.lcip.org/v1/authorization",
+        "TokenEndpoint": "https://oauth-stable.dev.lcip.org/v1/token",
+        "UserApiEndpoint": "https://stable.dev.lcip.org/profile/v1/profile"
     }
 }

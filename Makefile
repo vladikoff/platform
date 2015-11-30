@@ -212,8 +212,8 @@ run: install
 	@echo starting react processor	
 	@cd web/react && npm start &
 
-	@echo starting go web server
-	@$(GO) run $(GOFLAGS) mattermost.go -config=config.json &
+	# @echo starting go web server
+	# @$(GO) run $(GOFLAGS) mattermost.go -config=config.json &
 
 	@echo starting compass watch
 	@cd web/sass-files && compass watch &

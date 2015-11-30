@@ -599,13 +599,17 @@ func signupCompleteOAuth(c *api.Context, w http.ResponseWriter, r *http.Request)
 	uri := c.GetSiteURL() + "/signup/" + service + "/complete"
 
 	if body, team, err := api.AuthorizeOAuthUser(service, code, state, uri); err != nil {
+		l4g.Debug("failed to authorize oauth user")
 		c.Err = err
 		return
 	} else {
+		l4g.Debug("authorized gitlab user, getting user data")
 		var user *model.User
 		if service == model.USER_AUTH_SERVICE_GITLAB {
 			glu := model.GitLabUserFromJson(body)
+			l4g.Debug(glu)
 			user = model.UserFromGitLabUser(glu)
+			l4g.Debug(user)
 		}
 
 		if user == nil {

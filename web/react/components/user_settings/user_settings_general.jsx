@@ -494,7 +494,7 @@ export default class UserSettingsGeneralTab extends React.Component {
                         key='oauthEmailInfo'
                         className='form-group'
                     >
-                        <div className='setting-list__hint'>{'Log in occurs through GitLab. Email cannot be updated.'}</div>
+                        <div className='setting-list__hint'>{'Log in occurs through Firefox Accounts. Email cannot be updated.'}</div>
                         {helpText}
                     </div>
                 );

@@ -60,7 +60,7 @@ export default class ImportThemeModal extends React.Component {
         theme.centerChannelBg = '#ffffff';
         theme.centerChannelColor = '#333333';
         theme.newMessageSeparator = '#F80';
-        theme.linkColor = '#2389d7';
+        theme.linkColor = '#E66000';
         theme.buttonBg = '#26a970';
         theme.buttonColor = '#ffffff';
         theme.mentionHighlightBg = '#fff2bb';

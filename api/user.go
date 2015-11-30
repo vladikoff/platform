@@ -1628,6 +1628,12 @@ func AuthorizeOAuthUser(service, code, state, redirectUri string) (io.ReadCloser
 		if result := <-tchan; result.Err != nil {
 			return nil, nil, result.Err
 		} else {
+			l4g.Debug("got profile data")
+//			contents, err := ioutil.ReadAll(resp.Body)
+//			fmt.Printf("%s\n", string(contents))
+//			if err != nil {
+//				fmt.Printf("%s", err)
+//			}
 			return resp.Body, result.Data.(*model.Team), nil
 		}
 	}
